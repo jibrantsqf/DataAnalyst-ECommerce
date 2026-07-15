@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 import datetime as dt
+import os
 
 # Set tema seaborn
 sns.set(style='white')
