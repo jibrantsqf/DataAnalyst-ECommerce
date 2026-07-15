@@ -14,7 +14,12 @@ st.set_page_config(page_title="E-Commerce Dashboard", page_icon="🛒", layout="
 # --- FUNGSI LOAD & CLEAN DATA ---
 @st.cache_data
 def load_data():
-    base_path = "../Data Ecommerce/"
+    # Mendapatkan path absolut dari file app.py saat ini berada
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Menggabungkan path saat ini dengan folder dataset
+    # Ini akan selalu dinamis mencari folder 'Data Ecommerce' yang sejajar dengan folder 'Dashboard'
+    base_path = os.path.join(current_dir, '../Data Ecommerce/')
     
     # Load Data
     orders_df = pd.read_csv(base_path + "orders_dataset.csv")
